@@ -10,6 +10,8 @@ services:
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: true
+
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
@@ -22,3 +24,24 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    App\Controller\:
+        resource: '../src/Controller/'
+        tags: ['controller.service_arguments']
+
+    #App\Service\TwoTextCompare:
+    #    factory: [ '@App\Service\TwoTextCompareFactory', createCompareTextsFactory ]
+    #    public: true
+
+    #two_text_compare_factory:
+    #    class: App\Service\TwoTextCompareFactory
+    #two_text_compare:
+    #    class: App\Service\TwoTextCompare
+    #    factory: two_text_compare_factory
+
+    App\Service\TwoTextCompare:
+        arguments:
+            $text1: 'bacon'
+            $text2: 'cupidatat'
+
+
+
