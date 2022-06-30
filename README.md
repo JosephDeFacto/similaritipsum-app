@@ -56,7 +56,7 @@
 
          "charactersDifference":134,
 
-         "message":"There is 134 difference in characters",
+         "message":"There are 134 differences in characters",
 
          "params":{"text1":"lorem","text2":"bacon"}
       }
