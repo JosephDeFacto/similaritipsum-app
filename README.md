@@ -4,7 +4,7 @@
 
 **Symfony 5.4.9**
 
-# Installation - Docker (Ubuntu)
+## Installation - Docker (Ubuntu)
 - Install docker: https://docs.docker.com/engine/install/ubuntu/
 - Install docker-compose: https://docs.docker.com/compose/install/
 
@@ -12,7 +12,7 @@
 
 *To make sure docker-compose is installed, type in terminal: **docker-compose -v**
  
- # Project Setup
+## Project Setup
  - First, make sure you have composer installed on your system, if not, download and install from link: **https://getcomposer.org/download/**
 
  - Open the terminal, in your root directory, clone the project: *git clone **https://github.com/JosephDeFacto/similaritipsum-app.git***
@@ -21,18 +21,20 @@
  
  - In root directory of the application, fire **composer install** (it will install all necessary dependencies needed for application to work)
  
- - In your terminal, navigate to docker directory, and fire **docker-compose up -d** to start all docker containers
+ - Next, navigate to docker directory, and fire **docker-compose up -d** to start all docker containers
+ 
+   <sub>To check state of your containers, type: **docker-compose ps -a**</sub>
  
  - Exit from docker directory, and in your root directory, fire: **symfony serve -d** to start the local web server
 
- - Open your browser and navigate to http://localhost:8080/
+ - Open your browser and navigate to http://localhost:yourport/
 
  - If everything works fine, you should be able to see welcome page
 
  - If you want to stop docker from running, in your terminal navigate to docker directory, and fire: **docker-compose down**
  
  
-  # Application Usage
+ ## Application Usage
   **Get all results**
   - This endpoint retrieves results
   
@@ -54,13 +56,17 @@
 
          "charactersDifference":134,
 
-         "message":"There is 134 difference in characters",
+         "message":"There are 134 differences in characters",
 
          "params":{"text1":"lorem","text2":"bacon"}
       }
       
       
-For providing non-valid parameters, you'll get:
+For providing non-valid parameters, for example:
+
+>` http://localhost:8080/api/first/aaaa/second/aaaa`
+
+You'll get:
   
   `Status Code`  **404**
 
