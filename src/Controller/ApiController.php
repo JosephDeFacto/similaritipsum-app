@@ -36,8 +36,10 @@ class ApiController extends AbstractController
 
         if ($data != 0) {
             $response = 'There are ' . $data . " differences in characters";
+        } else {
+            $response = 'There is no difference';
         }
-        $response = 'There is no difference';
+
 
         return new JsonResponse([
             'status' => 200,
