@@ -21,7 +21,7 @@
  
  - In root directory of the application, fire **composer install** (it will install all necessary dependencies needed for application to work)
  
- - In your terminal, navigate to docker directory, and fire **docker-compose up -d** to start all docker containers
+ - Next, navigate to docker directory, and fire **docker-compose up -d** to start all docker containers
  
  - Exit from docker directory, and in your root directory, fire: **symfony serve -d** to start the local web server
 
