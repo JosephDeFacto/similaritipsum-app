@@ -34,7 +34,7 @@ class ApiController extends AbstractController
         $compare = $factory->createCompareTextsFactory($stream1, $stream2);
         $data = $compare->compareTexts();
 
-        if ($data !== 0) {
+        if ($data != 0) {
             $response = 'There are ' . $data . " differences in characters";
         }
         $response = 'There is no difference';
