@@ -62,7 +62,11 @@
       }
       
       
-For providing non-valid parameters, you'll get:
+For providing non-valid parameters, for example:
+
+>` http://localhost:8080/api/first/aaa/second/aaa`
+
+You'll get:
   
   `Status Code`  **404**
 
