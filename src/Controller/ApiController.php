@@ -3,10 +3,8 @@
 namespace App\Controller;
 
 use App\Service\TwoTextCompareFactory;
-use PHPUnit\Util\Json;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ApiController extends AbstractController
@@ -14,14 +12,16 @@ class ApiController extends AbstractController
     /**
      * @var string[]
      */
-    public $textFiles = ["bacon", "cupidatat", "lorem", "tatcupidat"];
+    public $textFiles = ['bacon', 'cupidatat', 'lorem', 'tatcupidat'];
     /**
      * endpoint
      * @Route("/api/first/{stream1}/second/{stream2}", name="app_api")
      * @method={"GET"}
      */
-    public function index(string $stream1, string $stream2): Response
+    public function index(string $stream1, string $stream2): JsonResponse
     {
+
+        $response = '';
         if (!(in_array($stream1, $this->textFiles)) || !(in_array($stream2, $this->textFiles))) {
             return new JsonResponse([
                 'status' => 404,
@@ -35,10 +35,9 @@ class ApiController extends AbstractController
         $data = $compare->compareTexts();
 
         if ($data !== 0) {
-            $response = 'There is ' . $data . " difference in characters";
-        } else {
-            $response = 'There is no difference';
+            $response = 'There are ' . $data . " differences in characters";
         }
+        $response = 'There is no difference';
 
         return new JsonResponse([
             'status' => 200,
