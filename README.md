@@ -64,7 +64,7 @@
       
 For providing non-valid parameters, for example:
 
->` http://localhost:8080/api/first/aaa/second/aaa`
+>` http://localhost:8080/api/first/aaaa/second/aaaa`
 
 You'll get:
   
